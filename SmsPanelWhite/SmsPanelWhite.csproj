@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EBC48CA-3A40-46E3-AA04-70EB6E5228EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmsPanelWhite</RootNamespace>
+    <AssemblyName>SmsPanelWhite</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>YasnaPartnerKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YasnaSms">
+      <HintPath>..\..\Libs\YasnaSms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restful\BaseResponseApiModel.cs" />
+    <Compile Include="Restful\ContactsCustomerClubCategory.cs" />
+    <Compile Include="Restful\Contactscustomerclubresponsedetail.cs" />
+    <Compile Include="Restful\Credit.cs" />
+    <Compile Include="Restful\CreditResponse.cs" />
+    <Compile Include="Restful\CustomerClub.cs" />
+    <Compile Include="Restful\CustomerClubContact.cs" />
+    <Compile Include="Restful\CustomerClubContactCategoryResponse.cs" />
+    <Compile Include="Restful\CustomerClubContactObject.cs" />
+    <Compile Include="Restful\CustomerClubContactResponse.cs" />
+    <Compile Include="Restful\CustomerClubContactsResponse.cs" />
+    <Compile Include="Restful\CustomerClubInsertAndSendMessage.cs" />
+    <Compile Include="Restful\CustomerClubLogginResponse.cs" />
+    <Compile Include="Restful\CustomerClubSend.cs" />
+    <Compile Include="Restful\CustomerClubSendResponse.cs" />
+    <Compile Include="Restful\CustomerClubSendToCategories.cs" />
+    <Compile Include="Restful\DateTimeExtensions.cs" />
+    <Compile Include="Restful\EnumHttpMethod.cs" />
+    <Compile Include="Restful\HttpClient.cs" />
+    <Compile Include="Restful\HttpGetRequest.cs" />
+    <Compile Include="Restful\HttpObject.cs" />
+    <Compile Include="Restful\HttpPostRequest.cs" />
+    <Compile Include="Restful\HttpPutRequest.cs" />
+    <Compile Include="Restful\HttpRequestExtensions.cs" />
+    <Compile Include="Restful\IHttpRequest.cs" />
+    <Compile Include="Restful\Lazy.cs" />
+    <Compile Include="Restful\MessageSend.cs" />
+    <Compile Include="Restful\MessageSendObject.cs" />
+    <Compile Include="Restful\MessageSendResponseObject.cs" />
+    <Compile Include="Restful\ReceivedMessageResponseByDate.cs" />
+    <Compile Include="Restful\ReceivedMessages.cs" />
+    <Compile Include="Restful\ReceiveMessage.cs" />
+    <Compile Include="Restful\ReceiveMessageRequestObject.cs" />
+    <Compile Include="Restful\ReceiveMessageResponseById.cs" />
+    <Compile Include="Restful\RestVerificationCode.cs" />
+    <Compile Include="Restful\RestVerificationCodeRespone.cs" />
+    <Compile Include="Restful\SentMessage.cs" />
+    <Compile Include="Restful\SentMessageResponseByDate.cs" />
+    <Compile Include="Restful\SentMessageResponseById.cs" />
+    <Compile Include="Restful\SentSmsDetails.cs" />
+    <Compile Include="Restful\SentSMSLog2.cs" />
+    <Compile Include="Restful\Serializer.cs" />
+    <Compile Include="Restful\SmsLine.cs" />
+    <Compile Include="Restful\SmsLineNumber.cs" />
+    <Compile Include="Restful\SMSLines.cs" />
+    <Compile Include="Restful\Token.cs" />
+    <Compile Include="Restful\TokenRequestObject.cs" />
+    <Compile Include="Restful\TokenResultObject.cs" />
+    <Compile Include="Restful\UltraFast.cs" />
+    <Compile Include="Restful\UltraFastParameters.cs" />
+    <Compile Include="Restful\UltraFastSend.cs" />
+    <Compile Include="Restful\UltraFastSendRespone.cs" />
+    <Compile Include="Restful\VerificationCode.cs" />
+    <Compile Include="YasnaSmsProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="YasnaPartnerKey.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
